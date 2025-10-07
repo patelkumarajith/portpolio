@@ -1,0 +1,15 @@
+{
+  "name": "ajith-portfolio-admin-panel",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "mkdir -p dist && cp -r components hooks services views dist/ && cp index.html metadata.json vercel.json App.tsx constants.ts index.tsx types.ts dist/",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
+  }
+}
