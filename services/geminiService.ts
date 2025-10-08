@@ -1,33 +1,32 @@
 import { GoogleGenAI, GenerateContentResponse } from "@google/genai";
 
 // --- API Key Configuration ---
-// The API key provided by the user has been added here to make the chat functional.
+// The API key is sourced from the `API_KEY` environment variable.
+// This must be configured in the deployment environment (e.g., Vercel, Netlify).
 //
 // IMPORTANT SECURITY NOTICE:
-// Storing an API key directly in your website's code (client-side) is not secure.
-// Anyone who visits your site can potentially find and use your key, which could lead to
-// unexpected charges or quota usage. For a personal portfolio, this risk may be acceptable,
-// but for a production application, it's highly recommended to use a backend server to handle API calls
-// or use environment variables provided by your hosting service (like Vercel).
-const GEMINI_API_KEY = "AIzaSyA-AxHfVn7XAfiaFIvFEGyTtorF1wRn14M";
+// Using API keys on the client-side is not recommended for production applications
+// as they can be exposed. For a personal portfolio, this risk may be acceptable.
+// For more secure applications, use a backend proxy to handle API calls.
 
 let ai: GoogleGenAI | null = null;
 
-// Initialize the AI client only if a valid key is provided.
-if (GEMINI_API_KEY) {
-    try {
-        ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
-    } catch (e) {
-        console.error("Error initializing GoogleGenAI. The API key may be malformed.", e);
-    }
+try {
+    // Initialize the GoogleGenAI client using the environment variable.
+    // The guidelines mandate using `process.env.API_KEY`. The build/deployment
+    // environment must make this variable available to the client-side code.
+    ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+} catch (e) {
+    // This will catch errors during initialization, e.g., if the key is structurally invalid.
+    console.error("Error initializing GoogleGenAI. The API key may be malformed or missing from environment variables.", e);
 }
 
 const systemInstruction = `You are a friendly and helpful AI assistant for Ajith Kumar's personal portfolio website. Your goal is to answer questions about Ajith, his skills, projects, and experience based on the context of a software developer portfolio. Be professional, concise, and encourage users to get in touch with Ajith via the contact form for more detailed inquiries. Do not make up information that is not typically found in a portfolio. Keep your answers conversational and brief.`;
 
 export const generateChatResponse = async (prompt: string): Promise<string> => {
-  // If the AI client failed to initialize, return a helpful error message.
+  // If the AI client failed to initialize (e.g., missing API key), return a helpful error message.
   if (!ai) {
-    return "The AI chat is not configured. The site owner needs to add a Gemini API key to enable this feature.";
+    return "The AI chat is not configured. The site owner needs to set the `API_KEY` environment variable in their deployment settings to enable this feature.";
   }
 
   try {
@@ -46,7 +45,7 @@ export const generateChatResponse = async (prompt: string): Promise<string> => {
   } catch (error) {
     console.error("Error generating response from Gemini API:", error);
     if (error instanceof Error && (error.message.includes('API key not valid') || error.message.includes('API key is missing'))) {
-       return "The AI chat is currently unavailable due to an invalid API key. The site owner needs to check the configuration.";
+       return "The AI chat is currently unavailable due to an invalid or missing API key. The site owner needs to check the configuration in the deployment environment.";
     }
     return "Sorry, I'm having trouble connecting to my brain right now. Please try again later.";
   }

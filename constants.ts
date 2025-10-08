@@ -95,7 +95,7 @@ export const PROJECTS: Project[] = [
   {
     title: 'Scientific Calculator',
     description: 'A web-based scientific calculator with advanced mathematical functions, built with HTML, CSS, and JavaScript.',
-    image: 'https://placehold.co/600x400/1F2937/9CA3AF/png?text=Scientific+Calculator',
+    image: 'https://images.unsplash.com/photo-1554224155-8d044b40f259?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80',
     tags: ['HTML', 'CSS', 'JavaScript'],
     githubUrl: 'https://github.com',
     liveUrl: 'https://example.com',
@@ -103,7 +103,7 @@ export const PROJECTS: Project[] = [
   {
     title: 'Tic-Tac-Toe Game',
     description: 'A classic Tic-Tac-Toe game playable in the browser, featuring a clean UI and win/draw detection logic.',
-    image: 'https://placehold.co/600x400/1F2937/9CA3AF/png?text=Tic-Tac-Toe',
+    image: 'https://images.unsplash.com/photo-1599601142531-509b3a3d5832?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80',
     tags: ['HTML', 'CSS', 'JavaScript'],
     githubUrl: 'https://github.com',
     liveUrl: 'https://example.com',
@@ -111,7 +111,7 @@ export const PROJECTS: Project[] = [
   {
     title: 'Personal Blog',
     description: 'A personal blog site built with Astro, designed for performance and showcasing articles and thoughts.',
-    image: 'https://placehold.co/600x400/1F2937/9CA3AF/png?text=Personal+Blog',
+    image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80',
     tags: ['Astro', 'Markdown', 'CSS'],
     githubUrl: 'https://github.com',
     liveUrl: 'https://example.com',
@@ -119,7 +119,7 @@ export const PROJECTS: Project[] = [
   {
     title: 'SecureSign System',
     description: 'A secure user authentication and sign-in system, demonstrating best practices in web security.',
-    image: 'https://placehold.co/600x400/1F2937/9CA3AF/png?text=SecureSign+System',
+    image: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80',
     tags: ['HTML', 'JavaScript', 'Security'],
     githubUrl: 'https://github.com',
     liveUrl: 'https://example.com',
@@ -127,7 +127,7 @@ export const PROJECTS: Project[] = [
   {
     title: 'File Uploader',
     description: 'A simple file upload interface with client-side validation for file type/size and preview functionality.',
-    image: 'https://placehold.co/600x400/1F2937/9CA3AF/png?text=File+Uploader',
+    image: 'https://images.unsplash.com/photo-1585432959445-3002675c735d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80',
     tags: ['HTML', 'CSS', 'JavaScript'],
     githubUrl: 'https://github.com',
     liveUrl: 'https://example.com',
@@ -135,7 +135,7 @@ export const PROJECTS: Project[] = [
   {
     title: 'Full-Stack Portal Website',
     description: 'A feature-rich portal with user authentication, a dynamic dashboard, and content management. Built with the MERN stack (MongoDB, Express, React, Node.js) and secured with JWT for authentication.',
-    image: 'https://placehold.co/600x400/1F2937/9CA3AF/png?text=Portal+Website',
+    image: 'https://images.unsplash.com/photo-1522199755839-a2bacb67c546?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80',
     tags: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'TypeScript', 'Full Stack'],
     githubUrl: 'https://github.com',
     liveUrl: 'https://example.com',
@@ -143,7 +143,7 @@ export const PROJECTS: Project[] = [
   {
     title: 'Student Tracker App',
     description: 'A web application for tracking student information and progress.',
-    image: 'https://placehold.co/600x400/1F2937/9CA3AF/png?text=Student+Tracker',
+    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80',
     tags: ['HTML', 'CSS', 'JavaScript'],
     githubUrl: 'https://github.com',
     liveUrl: 'https://example.com',
@@ -151,7 +151,7 @@ export const PROJECTS: Project[] = [
   {
     title: 'Secret Code Generator',
     description: 'A Python script to generate and manage secret codes.',
-    image: 'https://placehold.co/600x400/1F2937/9CA3AF/png?text=Code+Generator',
+    image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80',
     tags: ['Python'],
     githubUrl: 'https://github.com',
     liveUrl: 'https://example.com',
@@ -159,7 +159,7 @@ export const PROJECTS: Project[] = [
    {
     title: 'Command Line To-Do List Manager',
     description: 'A comprehensive command-line todo list manager built with Python, featuring task creation, management, and filtering.',
-    image: 'https://placehold.co/600x400/1F2937/9CA3AF/png?text=To-Do+Manager',
+    image: 'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80',
     tags: ['Python'],
     githubUrl: 'https://github.com',
     liveUrl: 'https://example.com',
@@ -167,7 +167,7 @@ export const PROJECTS: Project[] = [
    {
     title: 'Shift Booking App',
     description: 'An application for managing and booking shifts, built with TypeScript.',
-    image: 'https://placehold.co/600x400/1F2937/9CA3AF/png?text=Shift+Booking+App',
+    image: 'https://images.unsplash.com/photo-1633320359858-f349ab3a15f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80',
     tags: ['TypeScript', 'React Native'],
     githubUrl: 'https://github.com',
     liveUrl: 'https://example.com',
@@ -175,7 +175,7 @@ export const PROJECTS: Project[] = [
    {
     title: 'Bank Management System',
     description: 'A system for managing bank accounts and transactions, developed in Python.',
-    image: 'https://placehold.co/600x400/1F2937/9CA3AF/png?text=Bank+System',
+    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80',
     tags: ['Python', 'SQL', 'Full Stack'],
     githubUrl: 'https://github.com',
     liveUrl: 'https://example.com',
