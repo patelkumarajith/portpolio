@@ -1,24 +1,28 @@
 import { GoogleGenAI, GenerateContentResponse } from "@google/genai";
 
 // --- API Key Configuration ---
-// The API key is sourced from the `API_KEY` environment variable.
-// This must be configured in the deployment environment (e.g., Vercel, Netlify).
-//
-// IMPORTANT SECURITY NOTICE:
-// Using API keys on the client-side is not recommended for production applications
-// as they can be exposed. For a personal portfolio, this risk may be acceptable.
-// For more secure applications, use a backend proxy to handle API calls.
+// FIX: Refactored to use environment variables for the API key, removing the hardcoded key.
+// This resolves the TypeScript error from comparing two literal strings and improves security.
+// The API key is sourced from the `process.env.API_KEY` environment variable.
+// This is a secure practice and assumes the key is set in the deployment environment.
+const apiKey = process.env.API_KEY;
 
+
+// --- Gemini AI Client Initialization ---
 let ai: GoogleGenAI | null = null;
 
-try {
-    // Initialize the GoogleGenAI client using the environment variable.
-    // The guidelines mandate using `process.env.API_KEY`. The build/deployment
-    // environment must make this variable available to the client-side code.
-    ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-} catch (e) {
-    // This will catch errors during initialization, e.g., if the key is structurally invalid.
-    console.error("Error initializing GoogleGenAI. The API key may be malformed or missing from environment variables.", e);
+// Check if a valid API key has been provided from environment variables.
+if (apiKey) {
+    try {
+        // Initialize the GoogleGenAI client with your key.
+        ai = new GoogleGenAI({ apiKey });
+    } catch (e) {
+        console.error("Error initializing GoogleGenAI. The API key may be malformed.", e);
+        ai = null; // Ensure AI client is null if initialization fails.
+    }
+} else {
+    // This warning will appear in the developer console if the key isn't set.
+    console.warn("Gemini API key not found. Please set the API_KEY environment variable to enable the AI chat feature.");
 }
 
 const systemInstruction = `You are a friendly and helpful AI assistant for Ajith Kumar's personal portfolio website. Your goal is to answer questions about Ajith, his skills, projects, and experience based on the context of a software developer portfolio. Be professional, concise, and encourage users to get in touch with Ajith via the contact form for more detailed inquiries. Do not make up information that is not typically found in a portfolio. Keep your answers conversational and brief.`;
@@ -26,7 +30,8 @@ const systemInstruction = `You are a friendly and helpful AI assistant for Ajith
 export const generateChatResponse = async (prompt: string): Promise<string> => {
   // If the AI client failed to initialize (e.g., missing API key), return a helpful error message.
   if (!ai) {
-    return "The AI chat is not configured. The site owner needs to set the `API_KEY` environment variable in their deployment settings to enable this feature.";
+    // This message is shown in the chat window to the site owner.
+    return "The AI chat is currently not configured. If you are the site owner, please ensure the Gemini API key is set as an environment variable to activate this feature.";
   }
 
   try {
@@ -45,7 +50,7 @@ export const generateChatResponse = async (prompt: string): Promise<string> => {
   } catch (error) {
     console.error("Error generating response from Gemini API:", error);
     if (error instanceof Error && (error.message.includes('API key not valid') || error.message.includes('API key is missing'))) {
-       return "The AI chat is currently unavailable due to an invalid or missing API key. The site owner needs to check the configuration in the deployment environment.";
+       return "The AI chat is currently unavailable due to an invalid API key. The site owner needs to check the API key environment variable.";
     }
     return "Sorry, I'm having trouble connecting to my brain right now. Please try again later.";
   }

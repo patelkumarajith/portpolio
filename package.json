@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "mkdir -p dist && cp -r components hooks services views dist/ && cp index.html metadata.json vercel.json App.tsx constants.ts index.tsx types.ts dist/",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
